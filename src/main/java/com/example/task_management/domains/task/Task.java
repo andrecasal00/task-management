@@ -33,6 +33,7 @@ public class Task {
     private TaskStatus status;
 
     @DateTimeFormat()
+    @Column(name = "duedate")
     private Date dueDate;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -5,6 +5,8 @@ import com.example.task_management.domains.category.CategoryDto;
 import com.example.task_management.repositories.CategoryRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class CategoryService {
     CategoryRepository categoryRepository;
@@ -20,5 +22,10 @@ public class CategoryService {
         categoryRepository.save(category);
 
         return category;
+    }
+
+    public void deleteCategory(UUID uuid) {
+        System.out.println("UUID: "+uuid);
+        categoryRepository.deleteById(uuid);
     }
 }
