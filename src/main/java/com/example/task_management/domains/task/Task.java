@@ -4,6 +4,7 @@ import com.example.task_management.domains.user.User;
 import com.example.task_management.domains.category.Category;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,7 +29,7 @@ public class Task {
     private String title;
     private String description;
 
-    @NotBlank(message = "Status is mandatory!")
+    @NotNull(message = "Status is mandatory!")
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
 
