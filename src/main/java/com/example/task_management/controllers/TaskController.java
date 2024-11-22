@@ -6,16 +6,15 @@ import com.example.task_management.service.TaskService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/task/")
 public class TaskController {
-    private final TaskRepository taskRepository;
     private final TaskService taskService;
 
-    public TaskController(TaskRepository taskRepository, TaskService taskService) {
-        this.taskRepository = taskRepository;
+    public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
 
@@ -32,8 +31,8 @@ public class TaskController {
 
     // get user tasks
     @GetMapping
-    void getTasks() {
-        taskRepository.findAll();
+    List<Task> getTasks() {
+        return taskService.getAllTasks();
     }
 
     // update a task

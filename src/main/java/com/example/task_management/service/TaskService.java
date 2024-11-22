@@ -8,6 +8,8 @@ import com.example.task_management.repositories.TaskRepository;
 import com.example.task_management.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -35,5 +37,9 @@ public class TaskService {
 
         taskRepository.save(task);
         return task;
+    }
+
+    public List<Task> getAllTasks() {
+        return taskRepository.findAll();
     }
 }
