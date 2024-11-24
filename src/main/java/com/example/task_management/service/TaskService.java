@@ -6,9 +6,10 @@ import com.example.task_management.domains.user.User;
 import com.example.task_management.repositories.CategoryRepository;
 import com.example.task_management.repositories.TaskRepository;
 import com.example.task_management.repositories.UserRepository;
+import com.example.task_management.utils.exceptions.TaskNotFoundException;
+import com.example.task_management.utils.exceptions.UnauthorizedException;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -39,7 +40,18 @@ public class TaskService {
         return task;
     }
 
-    public List<Task> getAllTasks() {
-        return taskRepository.findAll();
+    public List<Task> getAllTasks(UUID uuid) {
+        return taskRepository.findByUserUuid(uuid);
+    }
+
+    public void deleteTask(UUID taskUuid, UUID userUuid) {
+
+        Task task = taskRepository.findById(taskUuid)
+                .orElseThrow(() -> new TaskNotFoundException("Task not found"));
+
+        if (!task.getUser().getUuid().equals(userUuid)) {
+            throw new UnauthorizedException("You are not authorized to delete this task");
+        }
+        taskRepository.deleteById(taskUuid);
     }
 }
