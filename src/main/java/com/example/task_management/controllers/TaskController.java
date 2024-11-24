@@ -3,6 +3,7 @@ package com.example.task_management.controllers;
 import com.example.task_management.domains.task.Task;
 import com.example.task_management.repositories.TaskRepository;
 import com.example.task_management.service.TaskService;
+import com.example.task_management.utils.exceptions.TaskNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -48,7 +49,7 @@ public class TaskController {
         try {
             taskService.deleteTask(taskUuid, userUuid);
             return ResponseEntity.ok("Task deleted with success"); // 204 No Content
-        } catch (IllegalArgumentException ex) {
+        } catch (TaskNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null); // 404 Not Found
         } catch (Exception ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null); // 500 Internal Server Error
