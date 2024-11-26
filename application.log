@@ -1,0 +1,165 @@
+2024-11-24T15:02:38.497Z  INFO 10492 --- [task_management] [main] c.example.task_management.Application    : Starting Application using Java 23.0.1 with PID 10492 (C:\Users\casal\Desktop\task_management\target\classes started by casal in C:\Users\casal\Desktop\task_management)
+2024-11-24T15:02:38.500Z  INFO 10492 --- [task_management] [main] c.example.task_management.Application    : No active profile set, falling back to 1 default profile: "default"
+2024-11-24T15:02:39.444Z  INFO 10492 --- [task_management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-24T15:02:39.514Z  INFO 10492 --- [task_management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
+2024-11-24T15:02:40.251Z  INFO 10492 --- [task_management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-24T15:02:40.277Z  INFO 10492 --- [task_management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-24T15:02:40.277Z  INFO 10492 --- [task_management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-24T15:02:40.402Z  INFO 10492 --- [task_management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-24T15:02:40.403Z  INFO 10492 --- [task_management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1822 ms
+2024-11-24T15:02:40.774Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2024-11-24T15:02:40.774Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 ...
+2024-11-24T15:02:40.774Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2024-11-24T15:02:40.775Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2024-11-24T15:02:40.775Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 ...
+2024-11-24T15:02:40.775Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/casal/Desktop/task_management/target/classes/db/migration
+2024-11-24T15:02:40.777Z DEBUG 10492 --- [task_management] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\casal\Desktop\task_management\target\classes\
+2024-11-24T15:02:40.777Z DEBUG 10492 --- [task_management] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\casal\Desktop\task_management\target\classes\db\migration (db/migration)
+2024-11-24T15:02:40.779Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V0__initial_migration.sql
+2024-11-24T15:02:40.779Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2024-11-24T15:02:40.785Z DEBUG 10492 --- [task_management] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V0__initial_migration.sql
+2024-11-24T15:02:40.790Z  INFO 10492 --- [task_management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-24T15:02:40.987Z  INFO 10492 --- [task_management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@32256e68
+2024-11-24T15:02:40.989Z  INFO 10492 --- [task_management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-24T15:02:41.029Z  INFO 10492 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/task_management (PostgreSQL 17.0)
+2024-11-24T15:02:41.029Z DEBUG 10492 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Driver: PostgreSQL JDBC Driver 42.7.4
+2024-11-24T15:02:41.030Z DEBUG 10492 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: true
+2024-11-24T15:02:41.031Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2024-11-24T15:02:41.032Z DEBUG 10492 --- [task_management] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2024-11-24T15:02:41.047Z  WARN 10492 --- [task_management] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2024-11-24T15:02:41.049Z DEBUG 10492 --- [task_management] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2024-11-24T15:02:41.058Z DEBUG 10492 --- [task_management] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2024-11-24T15:02:41.062Z DEBUG 10492 --- [task_management] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2024-11-24T15:02:41.071Z DEBUG 10492 --- [task_management] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V0__initial_migration.sql (filename: V0__initial_migration.sql)
+2024-11-24T15:02:41.072Z DEBUG 10492 --- [task_management] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V0__initial_migration.sql (filename: V0__initial_migration.sql)
+2024-11-24T15:02:41.103Z  INFO 10492 --- [task_management] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.043s)
+2024-11-24T15:02:41.110Z DEBUG 10492 --- [task_management] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: "public"
+2024-11-24T15:02:41.124Z DEBUG 10492 --- [task_management] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2024-11-24T15:02:41.128Z  INFO 10492 --- [task_management] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 0
+2024-11-24T15:02:41.132Z  INFO 10492 --- [task_management] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-11-24T15:02:41.142Z DEBUG 10492 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 28 of 56M
+2024-11-24T15:02:41.286Z  INFO 10492 --- [task_management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-24T15:02:41.389Z  INFO 10492 --- [task_management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-24T15:02:41.436Z  INFO 10492 --- [task_management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-24T15:02:41.839Z  INFO 10492 --- [task_management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-24T15:02:42.940Z  INFO 10492 --- [task_management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-24T15:02:42.944Z  INFO 10492 --- [task_management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T15:02:43.427Z  WARN 10492 --- [task_management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-24T15:02:44.254Z  INFO 10492 --- [task_management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-24T15:02:44.271Z  INFO 10492 --- [task_management] [main] c.example.task_management.Application    : Started Application in 6.355 seconds (process running for 6.922)
+2024-11-24T15:02:46.355Z  INFO 10492 --- [task_management] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-24T15:02:46.355Z  INFO 10492 --- [task_management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-24T15:02:46.357Z  INFO 10492 --- [task_management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-11-24T15:03:20.268Z  INFO 10492 --- [task_management] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T15:03:20.270Z  INFO 10492 --- [task_management] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-24T15:03:20.274Z  INFO 10492 --- [task_management] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-24T15:03:24.054Z  INFO 3308 --- [task_management] [main] c.example.task_management.Application    : Starting Application using Java 23.0.1 with PID 3308 (C:\Users\casal\Desktop\task_management\target\classes started by casal in C:\Users\casal\Desktop\task_management)
+2024-11-24T15:03:24.057Z  INFO 3308 --- [task_management] [main] c.example.task_management.Application    : No active profile set, falling back to 1 default profile: "default"
+2024-11-24T15:03:24.991Z  INFO 3308 --- [task_management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-24T15:03:25.064Z  INFO 3308 --- [task_management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2024-11-24T15:03:25.829Z  INFO 3308 --- [task_management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-24T15:03:25.854Z  INFO 3308 --- [task_management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-24T15:03:25.854Z  INFO 3308 --- [task_management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-24T15:03:25.946Z  INFO 3308 --- [task_management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-24T15:03:25.947Z  INFO 3308 --- [task_management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1811 ms
+2024-11-24T15:03:26.273Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2024-11-24T15:03:26.273Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 ...
+2024-11-24T15:03:26.273Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2024-11-24T15:03:26.273Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2024-11-24T15:03:26.274Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 ...
+2024-11-24T15:03:26.274Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/casal/Desktop/task_management/target/classes/db/migration
+2024-11-24T15:03:26.275Z DEBUG 3308 --- [task_management] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\casal\Desktop\task_management\target\classes\
+2024-11-24T15:03:26.276Z DEBUG 3308 --- [task_management] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\casal\Desktop\task_management\target\classes\db\migration (db/migration)
+2024-11-24T15:03:26.277Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V0__initial_migration.sql
+2024-11-24T15:03:26.278Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2024-11-24T15:03:26.282Z DEBUG 3308 --- [task_management] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V0__initial_migration.sql
+2024-11-24T15:03:26.287Z  INFO 3308 --- [task_management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-24T15:03:26.468Z  INFO 3308 --- [task_management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52d0f583
+2024-11-24T15:03:26.469Z  INFO 3308 --- [task_management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-24T15:03:26.512Z  INFO 3308 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/task_management (PostgreSQL 17.0)
+2024-11-24T15:03:26.512Z DEBUG 3308 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Driver: PostgreSQL JDBC Driver 42.7.4
+2024-11-24T15:03:26.512Z DEBUG 3308 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: true
+2024-11-24T15:03:26.514Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2024-11-24T15:03:26.514Z DEBUG 3308 --- [task_management] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2024-11-24T15:03:26.533Z  WARN 3308 --- [task_management] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2024-11-24T15:03:26.535Z DEBUG 3308 --- [task_management] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2024-11-24T15:03:26.544Z DEBUG 3308 --- [task_management] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2024-11-24T15:03:26.548Z DEBUG 3308 --- [task_management] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2024-11-24T15:03:26.559Z DEBUG 3308 --- [task_management] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V0__initial_migration.sql (filename: V0__initial_migration.sql)
+2024-11-24T15:03:26.561Z DEBUG 3308 --- [task_management] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V0__initial_migration.sql (filename: V0__initial_migration.sql)
+2024-11-24T15:03:26.593Z  INFO 3308 --- [task_management] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.047s)
+2024-11-24T15:03:26.600Z DEBUG 3308 --- [task_management] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: "public"
+2024-11-24T15:03:26.616Z DEBUG 3308 --- [task_management] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2024-11-24T15:03:26.622Z  INFO 3308 --- [task_management] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 0
+2024-11-24T15:03:26.626Z  INFO 3308 --- [task_management] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-11-24T15:03:26.637Z DEBUG 3308 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 29 of 56M
+2024-11-24T15:03:26.766Z  INFO 3308 --- [task_management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-24T15:03:26.866Z  INFO 3308 --- [task_management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-24T15:03:26.920Z  INFO 3308 --- [task_management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-24T15:03:27.382Z  INFO 3308 --- [task_management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-24T15:03:28.486Z  INFO 3308 --- [task_management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-24T15:03:28.490Z  INFO 3308 --- [task_management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T15:03:28.973Z  WARN 3308 --- [task_management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-24T15:03:29.540Z  INFO 3308 --- [task_management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-24T15:03:29.554Z  INFO 3308 --- [task_management] [main] c.example.task_management.Application    : Started Application in 6.085 seconds (process running for 6.605)
+2024-11-24T15:03:33.249Z  INFO 3308 --- [task_management] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-24T15:03:33.250Z  INFO 3308 --- [task_management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-24T15:03:33.251Z  INFO 3308 --- [task_management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-11-24T15:04:38.476Z  INFO 3308 --- [task_management] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T15:04:38.478Z  INFO 3308 --- [task_management] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-24T15:04:38.481Z  INFO 3308 --- [task_management] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-24T15:04:42.181Z  INFO 15344 --- [task_management] [main] c.example.task_management.Application    : Starting Application using Java 23.0.1 with PID 15344 (C:\Users\casal\Desktop\task_management\target\classes started by casal in C:\Users\casal\Desktop\task_management)
+2024-11-24T15:04:42.184Z  INFO 15344 --- [task_management] [main] c.example.task_management.Application    : No active profile set, falling back to 1 default profile: "default"
+2024-11-24T15:04:43.318Z  INFO 15344 --- [task_management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-24T15:04:43.400Z  INFO 15344 --- [task_management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 3 JPA repository interfaces.
+2024-11-24T15:04:44.257Z  INFO 15344 --- [task_management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-24T15:04:44.283Z  INFO 15344 --- [task_management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-24T15:04:44.284Z  INFO 15344 --- [task_management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-24T15:04:44.376Z  INFO 15344 --- [task_management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-24T15:04:44.377Z  INFO 15344 --- [task_management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2112 ms
+2024-11-24T15:04:44.728Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2024-11-24T15:04:44.729Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 ...
+2024-11-24T15:04:44.729Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2024-11-24T15:04:44.729Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2024-11-24T15:04:44.729Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868 ...
+2024-11-24T15:04:44.730Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/casal/Desktop/task_management/target/classes/db/migration
+2024-11-24T15:04:44.732Z DEBUG 15344 --- [task_management] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\casal\Desktop\task_management\target\classes\
+2024-11-24T15:04:44.732Z DEBUG 15344 --- [task_management] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\casal\Desktop\task_management\target\classes\db\migration (db/migration)
+2024-11-24T15:04:44.734Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V0__initial_migration.sql
+2024-11-24T15:04:44.735Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2024-11-24T15:04:44.739Z DEBUG 15344 --- [task_management] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V0__initial_migration.sql
+2024-11-24T15:04:44.746Z  INFO 15344 --- [task_management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-24T15:04:44.953Z  INFO 15344 --- [task_management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52d0f583
+2024-11-24T15:04:44.955Z  INFO 15344 --- [task_management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-24T15:04:44.998Z  INFO 15344 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/task_management (PostgreSQL 17.0)
+2024-11-24T15:04:44.999Z DEBUG 15344 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Driver: PostgreSQL JDBC Driver 42.7.4
+2024-11-24T15:04:44.999Z DEBUG 15344 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: true
+2024-11-24T15:04:45.001Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2024-11-24T15:04:45.001Z DEBUG 15344 --- [task_management] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2024-11-24T15:04:45.017Z  WARN 15344 --- [task_management] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+2024-11-24T15:04:45.019Z DEBUG 15344 --- [task_management] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2024-11-24T15:04:45.029Z DEBUG 15344 --- [task_management] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2024-11-24T15:04:45.031Z DEBUG 15344 --- [task_management] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2024-11-24T15:04:45.042Z DEBUG 15344 --- [task_management] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V0__initial_migration.sql (filename: V0__initial_migration.sql)
+2024-11-24T15:04:45.044Z DEBUG 15344 --- [task_management] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V0__initial_migration.sql (filename: V0__initial_migration.sql)
+2024-11-24T15:04:45.077Z  INFO 15344 --- [task_management] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.046s)
+2024-11-24T15:04:45.084Z DEBUG 15344 --- [task_management] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: "public"
+2024-11-24T15:04:45.101Z DEBUG 15344 --- [task_management] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2024-11-24T15:04:45.107Z  INFO 15344 --- [task_management] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 0
+2024-11-24T15:04:45.112Z  INFO 15344 --- [task_management] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-11-24T15:04:45.125Z DEBUG 15344 --- [task_management] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 29 of 58M
+2024-11-24T15:04:45.294Z  INFO 15344 --- [task_management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-24T15:04:45.402Z  INFO 15344 --- [task_management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-24T15:04:45.447Z  INFO 15344 --- [task_management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-24T15:04:45.842Z  INFO 15344 --- [task_management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-24T15:04:46.904Z  INFO 15344 --- [task_management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-24T15:04:46.907Z  INFO 15344 --- [task_management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T15:04:47.439Z  WARN 15344 --- [task_management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-24T15:04:48.031Z  INFO 15344 --- [task_management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-24T15:04:48.043Z  INFO 15344 --- [task_management] [main] c.example.task_management.Application    : Started Application in 6.452 seconds (process running for 6.981)
+2024-11-24T15:04:50.516Z  INFO 15344 --- [task_management] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-24T15:04:50.516Z  INFO 15344 --- [task_management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-24T15:04:50.517Z  INFO 15344 --- [task_management] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-11-24T15:08:46.030Z  INFO 15344 --- [task_management] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-24T15:08:46.032Z  INFO 15344 --- [task_management] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-24T15:08:46.036Z  INFO 15344 --- [task_management] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

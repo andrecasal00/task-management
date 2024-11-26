@@ -14,6 +14,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Table(name = "tbl_task")
@@ -35,9 +36,9 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
 
-    @DateTimeFormat()
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @Column(name = "duedate")
-    private Date dueDate;
+    private LocalDateTime dueDate;
 
     @ManyToOne()
     @JoinColumn(name = "user_uuid", nullable = false)
