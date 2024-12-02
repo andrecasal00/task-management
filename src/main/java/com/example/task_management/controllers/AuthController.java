@@ -49,7 +49,6 @@ public class AuthController {
 
     @PostMapping("register")
     public ResponseEntity signUp(@RequestBody UserDto body) {
-        logger.info("ENTROU AQUI");
         Optional<User> user = this.userRepository.findByEmail(body.email());
 
         if (user.isEmpty()) {

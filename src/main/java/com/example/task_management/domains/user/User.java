@@ -44,4 +44,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Task> tasks;
+
+    @Override
+    public String toString() {
+        return "User{email='" + this.email + "'}";
+    }
 }

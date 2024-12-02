@@ -1,6 +1,8 @@
 package com.example.task_management.controllers;
 
 import com.example.task_management.domains.task.Task;
+import com.example.task_management.domains.user.User;
+import com.example.task_management.infra.security.TokenService;
 import com.example.task_management.repositories.TaskRepository;
 import com.example.task_management.service.TaskService;
 import com.example.task_management.utils.exceptions.TaskNotFoundException;
@@ -8,8 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,10 +23,12 @@ import java.util.UUID;
 @RequestMapping("/api/task/")
 public class TaskController {
     private final TaskService taskService;
+    private final TokenService tokenService;
     private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
 
-    public TaskController(TaskService taskService) {
+    public TaskController(TaskService taskService, TokenService tokenService) {
         this.taskService = taskService;
+        this.tokenService = tokenService;
     }
 
     // create a new task
@@ -30,6 +38,12 @@ public class TaskController {
         @RequestParam UUID categoryId,
         @RequestBody Task task
     ) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User user = (User) authentication.getPrincipal();
+
+        logger.error(user.getEmail());
+
+
         Task createdTask = taskService.createTask(userId, categoryId, task);
         return ResponseEntity.ok(createdTask);
     }
