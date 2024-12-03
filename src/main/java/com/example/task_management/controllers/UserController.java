@@ -1,17 +1,12 @@
 package com.example.task_management.controllers;
 
-import com.example.task_management.domains.category.Category;
 import com.example.task_management.domains.user.User;
 import com.example.task_management.domains.user.UserDto;
-import com.example.task_management.repositories.UserRepository;
 import com.example.task_management.service.UserService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.UUID;
 
 @RestController

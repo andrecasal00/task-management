@@ -3,19 +3,15 @@ package com.example.task_management.controllers;
 import com.example.task_management.domains.task.Task;
 import com.example.task_management.domains.user.User;
 import com.example.task_management.infra.security.TokenService;
-import com.example.task_management.repositories.TaskRepository;
 import com.example.task_management.service.TaskService;
 import com.example.task_management.utils.exceptions.TaskNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.List;
 import java.util.UUID;
 
@@ -34,32 +30,33 @@ public class TaskController {
     // create a new task
     @PostMapping
     public ResponseEntity<Task> createTask(
-        @RequestParam UUID userId,
-        @RequestParam UUID categoryId,
-        @RequestBody Task task
+            @AuthenticationPrincipal User user,
+            @RequestParam UUID categoryId,
+            @RequestBody Task task
     ) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User) authentication.getPrincipal();
-
-        logger.error(user.getEmail());
-
-
-        Task createdTask = taskService.createTask(userId, categoryId, task);
+        Task createdTask = taskService.createTask(user.getUuid(), categoryId, task);
         return ResponseEntity.ok(createdTask);
     }
 
     // get user tasks
-    @GetMapping("{user_uuid}")
-    ResponseEntity<List<Task>> getTasks(@PathVariable("user_uuid") UUID userUUid) {
-        return ResponseEntity.ok(taskService.getAllTasks(userUUid));
+    @GetMapping
+    ResponseEntity<List<Task>> getTasks(
+            @AuthenticationPrincipal User user
+    ) {
+        logger.error("ENTREI AQUI?");
+        return ResponseEntity.ok(taskService.getAllTasks(user.getUuid()));
     }
 
     // update a task
     @PutMapping("{task_uuid}")
-    ResponseEntity<Task> updateTask(@RequestBody Task updatedTask, @PathVariable("task_uuid") UUID taskUuid, @RequestParam("userUuid") UUID userUuid) {
+    ResponseEntity<Task> updateTask(
+            @AuthenticationPrincipal User user,
+            @RequestBody Task updatedTask,
+            @PathVariable("task_uuid") UUID taskUuid
+    ) {
 
         try {
-            Task task = taskService.updateTask(taskUuid, userUuid, updatedTask);
+            Task task = taskService.updateTask(taskUuid, user.getUuid(), updatedTask);
             return ResponseEntity.ok(task);
         } catch (TaskNotFoundException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
@@ -70,7 +67,11 @@ public class TaskController {
 
     // delete a task
     @DeleteMapping("{task_uuid}")
-    ResponseEntity<String> deleteTask(@PathVariable("task_uuid") UUID taskUuid, @RequestParam("userUuid") UUID userUuid) {
+    ResponseEntity<String> deleteTask(
+            @AuthenticationPrincipal User user,
+            @PathVariable("task_uuid") UUID taskUuid,
+            @RequestParam("userUuid") UUID userUuid
+    ) {
         try {
             taskService.deleteTask(taskUuid, userUuid);
             return ResponseEntity.noContent().build(); // 204 No Content
